@@ -11,12 +11,20 @@ namespace Social24.Service
 {
     public class PostService
     {
+
+        private readonly Guid _userID;
+
+        public PostService(Guid userID)
+        {
+            _userID = userID;
+        }
+
         public bool CreatePost(PostCreate model)
         {
             var entity =
             new Post()
             {
-                OwnerID = _userID,
+                OwnerId = _userID,
                 Title = model.Title,
                 Text = model.Text,
                 CreatedUtc = DateTimeOffset.Now
@@ -37,9 +45,9 @@ namespace Social24.Service
                 var query =
                     ctx
                     .Posts
-                    .Where(e => e.OwnerID == _userID)
+                    .Where(e => e.OwnerId == _userID)
                     .Select(
-                       else =>
+                       e =>
                        new PostListItem
                        {
                            PostID = e.PostID,
@@ -47,11 +55,63 @@ namespace Social24.Service
                            CreatedUtc = e.CreatedUtc
                        }
                     );
+                    
+                return query.ToArray();
             }
 
-            return query.ToArray();
-        
         }
+
+        public PostDetails GetPostByPostId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Posts
+                    .Single(e => e.PostID == id && e.OwnerId == _userID);
+                return new PostDetails
+                {
+                    PostId = entity.PostID,
+                    Title = entity.Title,
+                    Text = entity.Text,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc
+                };
+            }
+        }
+
+        public bool UpdatePost(PostEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Posts
+                    .Single(e => e.PostID == model.PostId && e.OwnerId == _userID);
+
+                entity.Title = model.Title;
+                entity.Text = model.Text;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeletePost(int postId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Posts
+                    .Single(e => e.PostID == postId && e.OwnerId == _userID);
+                ctx.Posts.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
     }
 
 }

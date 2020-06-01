@@ -32,7 +32,7 @@ namespace Social24.Service
             }
          }
 
-        public IEnumerable<CommentListItem> GetNotes()
+        public IEnumerable<CommentListItem> GetComments()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -54,7 +54,7 @@ namespace Social24.Service
             }
         }
 
-        public CommentDetail GetNoteById(int id)
+        public CommentDetail GetCommentByPostId(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -72,7 +72,7 @@ namespace Social24.Service
             }
         }
 
-        public bool UpdateNote(CommentEdit model)
+        public bool UpdateComment(CommentEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -88,14 +88,14 @@ namespace Social24.Service
             }
         }
 
-        public bool DeleteComment(int noteId)
+        public bool DeleteComment(int CommentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Comments
-                    .Single(e => e.CommentId == noteId && e.OwnerId == _userId);
+                    .Single(e => e.CommentId == CommentId && e.OwnerId == _userId);
                 ctx.Comments.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

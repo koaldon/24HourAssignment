@@ -21,6 +21,7 @@ namespace Social24.Data
         //public User Author { get; set; }
         //public Post CommentPost {get; set;}
 
+      
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

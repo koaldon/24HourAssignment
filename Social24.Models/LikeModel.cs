@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Social24.Data
+namespace Social24.Models
 {
-    public class Reply:Comment
+
+    public class LikeModel
     {
-        
         
     }
 }
