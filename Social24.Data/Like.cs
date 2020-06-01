@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Social24.Data
 {
-    public class Reply:Comment
+    public class Like
     {
-        
-        
+        public Post LikedPost { get; set; }
+        public User Liker { get; set; }
     }
 }

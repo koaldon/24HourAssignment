@@ -56,13 +56,26 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CommentCreate.cs" />
+    <Compile Include="CommentDetail.cs" />
     <Compile Include="CommentEdit.cs" />
     <Compile Include="CommentListItem.cs" />
+    <Compile Include="LikeCreate.cs" />
+    <Compile Include="LikeModel.cs" />
+    <Compile Include="PostCreate.cs" />
+    <Compile Include="PostDetails.cs" />
+    <Compile Include="PostEdit.cs" />
+    <Compile Include="PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Social24.Data\Social24.Data.csproj">
+      <Project>{B3736307-39DF-4AE5-A556-9EFAF081607D}</Project>
+      <Name>Social24.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace Social24.Models
 {
-    public class PostListItem
+    public class PostDetails
     {
-        public int PostID { get; set; }
-        [Required]
+        public int PostId { get; set; }
         public string Title { get; set; }
+        public string Text { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
-
-
-
-
+        [Display(Name = "Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

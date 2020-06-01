@@ -56,11 +56,21 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CommentService.cs" />
+    <Compile Include="LikeService.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\Social24.Data.dll.config" />
+    <None Include="bin\Debug\Social24.Models.dll.config" />
+    <None Include="bin\Debug\Social24.Service.dll.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Social24.Service.csproj.CopyComplete" />
+    <None Include="obj\Debug\Social24.Service.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Social24.Service.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +82,28 @@
       <Project>{A7F783B9-BFF4-4125-95E8-598AADD61104}</Project>
       <Name>Social24.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Debug\Social24.Data.dll" />
+    <Content Include="bin\Debug\Social24.Data.pdb" />
+    <Content Include="bin\Debug\Social24.Models.dll" />
+    <Content Include="bin\Debug\Social24.Models.pdb" />
+    <Content Include="bin\Debug\Social24.Service.dll" />
+    <Content Include="bin\Debug\Social24.Service.pdb" />
+    <Content Include="obj\Debug\Social24.Service.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Social24.Service.dll" />
+    <Content Include="obj\Debug\Social24.Service.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
