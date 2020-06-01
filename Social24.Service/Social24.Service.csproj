@@ -55,12 +55,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CommentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Social24.Data\Social24.Data.csproj">
+      <Project>{B3736307-39DF-4AE5-A556-9EFAF081607D}</Project>
+      <Name>Social24.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Social24.Models\Social24.Models.csproj">
+      <Project>{A7F783B9-BFF4-4125-95E8-598AADD61104}</Project>
+      <Name>Social24.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,6 +32,7 @@ namespace Social24.Data
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Comment>Comments { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,6 +45,9 @@ namespace Social24.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
+
+
         public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
         {
             public IdentityUserLoginConfiguration()
