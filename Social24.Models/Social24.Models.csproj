@@ -60,6 +60,7 @@
     <Compile Include="CommentEdit.cs" />
     <Compile Include="CommentListItem.cs" />
     <Compile Include="LikeCreate.cs" />
+    <Compile Include="LikeItemList.cs" />
     <Compile Include="LikeModel.cs" />
     <Compile Include="PostCreate.cs" />
     <Compile Include="PostDetails.cs" />
@@ -77,5 +78,6 @@
       <Name>Social24.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

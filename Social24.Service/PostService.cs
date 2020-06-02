@@ -87,7 +87,7 @@ namespace Social24.Service
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.PostID == model.PostId && e.OwnerId == _userID);
+                    .Single(e => e.PostID == model.PostId);
 
                 entity.Title = model.Title;
                 entity.Text = model.Text;
@@ -104,7 +104,7 @@ namespace Social24.Service
                 var entity =
                     ctx
                     .Posts
-                    .Single(e => e.PostID == postId && e.OwnerId == _userID);
+                    .Single(e => e.PostID == postId);
                 ctx.Posts.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
